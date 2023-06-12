@@ -14,5 +14,4 @@ export interface ICreateUser {
     full_name: string;
     email: string;
     password: string;
-    password_changed_at: Date;
 }

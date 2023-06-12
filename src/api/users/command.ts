@@ -1,8 +1,8 @@
 import UserModel from "./model";
-import IUserDoc from "./dto";
+import IUserDoc, { ICreateUser } from "./dto";
 
 export class User {
-    static async create(data: any): Promise<IUserDoc> {
+    static async createUser(data: ICreateUser): Promise<IUserDoc> {
         try {
             const user = await UserModel.create({
                 full_name: data.full_name,

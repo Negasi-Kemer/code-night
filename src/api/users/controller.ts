@@ -2,10 +2,10 @@ import { User } from "./command";
 import { RequestHandler } from 'express'
 import { ICreateUser } from "./dto";
 
-export const create: RequestHandler = async (req, res, next) => {
+export const createUser: RequestHandler = async (req, res, next) => {
     try {
         const { full_name, email, password } = <ICreateUser>req.body;
-        const user = await User.create({ full_name, email, password })
+        const user = await User.createUser({ full_name, email, password })
 
         // Response
         res.status(201).json({
