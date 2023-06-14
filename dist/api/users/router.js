@@ -8,5 +8,8 @@ const router = (0, express_1.Router)();
 const validation_1 = require("./validation");
 const controller_1 = require("./controller");
 const validator_1 = __importDefault(require("../../utils/validator"));
-router.route("/").post((0, validator_1.default)(validation_1.createUserValidation), controller_1.createUser);
+router
+    .route("/")
+    .post((0, validator_1.default)(validation_1.createUserValidation), controller_1.createUser)
+    .get(controller_1.getAllUsers);
 exports.default = router;

@@ -40,26 +40,26 @@ const userSchema = new mongoose_1.Schema({
             validator: () => {
                 validator_1.default.isEmail;
             },
-            message: "Invalid email"
-        }
+            message: "Invalid email",
+        },
     },
     password: {
         type: String,
-        required: [true, "Password is required"]
+        required: [true, "Password is required"],
     },
-    password_changed_at: Date
+    password_changed_at: Date,
 }, {
     writeConcern: {
         w: "majority",
-        j: true
+        j: true,
     },
     timestamps: true,
     toJSON: {
-        virtuals: true
+        virtuals: true,
     },
     toObject: {
-        virtuals: true
-    }
+        virtuals: true,
+    },
 });
 userSchema.methods.checkPasswordChange = function (iat) {
     if (this.password_changed_at) {
@@ -69,5 +69,5 @@ userSchema.methods.checkPasswordChange = function (iat) {
     return false;
 };
 // Create model
-const User = mongoose_1.default.model("User", userSchema);
+const User = mongoose_1.default.model("Users123", userSchema);
 exports.default = User;
